@@ -7,25 +7,56 @@ class PageController extends Controller
 {
     public function home()
     {
-        return "This is the home page";
+        $schoolName = "Smart School Management System";
+        $version = "1.0.0";
+        $academicYear = "2026";
+
+        return view('pages.home', compact('schoolName', 'version', 'academicYear'));
     }
 
-    public function about($id)
+    public function about()
     {
-        return "this is about page and your id is ".$id;
+         $schoolName = "Smart School Management System";
+        $academicYear = "2026";
+
+        return view('pages.about', compact('schoolName','academicYear'));
     }
 
-    public function features($name = "user")
+    public function features()
     {
-        return "this is features page and your are ".$name;
+        $features = [
+        "Student Management",
+        "Teacher Management",
+        "Attendance Management",
+        "Fee Management"
+        ];
+        return view('pages.features', compact('features'));
     }
     public function pricing()
     {
-        return "this is pricing page";
+        $plans = [
+            [
+                'name' => 'Basic',
+                'price' => 100,
+            ],
+            [
+                'name' => 'Professional',
+                'price' => 250,
+            ],
+            [
+                'name' => 'Enterprise',
+                'price' => 500,
+            ],
+
+        ];
+        return view('pages.pricing', compact('plans'));
     }
 
     public function contact()
     {
-        return "This is contact page";
+        $email = "hoshvision.hv@gmail.com";
+        $phone = "+93 749178599";
+
+        return view('pages.contact', compact('email', 'phone'));
     }
 }
