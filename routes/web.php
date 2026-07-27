@@ -2,28 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () 
-{
-    return "This is the home page";
-}) ->name('home');
+use App\Http\Controllers\PageController;
 
+Route::get('/', [PageController::class, 'home'])->name('home');
 
-Route::get('/about/{id}', function ($id) 
-{
-    return "This is about page and your id is ".$id;
-})->name('about');
+Route::get('/about/{id}', [PageController::class,'about'])->name('about');
 
-Route::get('/features/{name?}', function ($name = "user") 
-{
-    return "this is features page and you are ".$name;
-})->name('features');
+Route::get('/features/{name?}',[PageController::class,'features'])->name('features');
 
-Route::get('/pricing', function () 
-{
-    return "this is pricing page";
-})->name('pricing');
+Route::get('/pricing', [PageController::class, 'pricing'])->name('pricing');
 
-Route::get('/contact', function () 
-{
-    return "this is contact page" ;
-})->name('contact');
+Route::get('/contact', [PageController::class,'contact'])->name('contact');
