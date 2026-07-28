@@ -1,0 +1,1 @@
+<p>© 2026 Smart School Management System</p> 

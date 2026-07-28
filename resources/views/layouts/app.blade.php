@@ -7,22 +7,21 @@
 </head>
 <body>
 
-	<h2> {{ config('app.name') }} </h2>
+<h2> {{ config('app.name') }} </h2>
 
-	<hr>
+<hr>
 
-	<a href=" {{ route('home') }} "> Home </a>
-	<a href=" {{ route('about') }} "> About </a>
-	<a href=" {{ route('features') }} "> Features </a>
-	<a href=" {{ route('pricing') }} "> Pricing </a>
-	<a href=" {{ route('contact') }} "> Contact </a>
+@include('partials.navbar')
 
-	<hr>
+<hr>
 
+<main>
 	@yield('content')
+</main>
 
-	<hr>
+<hr>
 
-	<p>© 2026 Smart School Management System</p>
+@include ('partials.footer')
+
 </body>
 </html>

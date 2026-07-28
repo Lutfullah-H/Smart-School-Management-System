@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Welcome to {{ $schoolName }} </h1>
+@include('partials.hero')
 
 <p>Version: {{ $version }}</p>
 
